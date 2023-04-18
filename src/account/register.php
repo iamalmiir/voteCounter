@@ -2,6 +2,8 @@
 global $pdo;
 $page_title = "Create Account";
 require_once __DIR__ . "/../../config.php";
+require_once __DIR__ . "/../components/formInput.php";
+require_once __DIR__ . "/../components/button.php";
 
 // check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // insert user data into database
-    $sql = $pdo->query("INSERT INTO users (full_name, username, password, email) VALUES ('$fullName', '$username', '$password', '$email')");
+    $sql = $pdo->query("INSERT INTO users (full_name, username, password, email)
+    VALUES ('$fullName', '$username', '$password', '$email')");
     // redirect to login page
     header("Location: login.php");
     exit();
@@ -43,50 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="mt-8 p-4 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white px-4 py-8 shadow-xl sm:rounded-lg sm:px-10">
             <form class="space-y-6" method="POST">
-                <div>
-                    <label for="fullName" class="block text-sm font-medium leading-6 text-sky-950">
-                        Full Name
-                    </label>
-                    <div class="mt-2">
-                        <input id="fullName" name="fullName" type="text" required
-                               class="block w-full rounded-md border-transparent p-1.5 text-sky-950 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-0 placeholder:text-gray-400 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <div>
-                    <label for="username" class="block text-sm font-medium leading-6 text-sky-950">
-                        Username
-                    </label>
-                    <div class="mt-2">
-                        <input id="username" name="username" type="text" required
-                               class="block w-full rounded-md border-transparent p-1.5 text-sky-950 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-0 placeholder:text-gray-400 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <div>
-                    <label for="email" class="block text-sm font-medium leading-6 text-sky-950">
-                        Email
-                    </label>
-                    <div class="mt-2">
-                        <input id="email" name="email" type="email" required
-                               class="block w-full rounded-md border-transparent p-1.5 text-sky-950 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-0 placeholder:text-gray-400 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <div>
-                    <label for="password" class="block text-sm font-medium leading-6 text-sky-950">Password</label>
-                    <div class="mt-2">
-                        <input id="password" name="password" type="password" autocomplete="current-password" required
-                               class="block w-full rounded-md border-0 p-1.5 border-transparent text-sky-950 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-0 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <div>
-                    <button type="submit"
-                            class="flex w-full justify-center rounded-md bg-sky-950 px-3 py-2 text-sm font-semibold text-white shadow-md hover:bg-sky-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Register
-                    </button>
-                </div>
+                <?php
+                echo formInput("Full Name", "fullName", "text");
+                echo formInput("Username", "username", "text");
+                echo formInput("Email", "email", "email");
+                echo formInput("Password", "password", "password");
+                echo button("Register", "submit");
+                ?>
             </form>
         </div>
     </div>

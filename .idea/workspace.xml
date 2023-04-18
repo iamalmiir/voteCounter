@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076e6ac0-2b6d-4db9-9d64-2fda248852f2" name="Changes" comment="" />
+    <list default="true" id="076e6ac0-2b6d-4db9-9d64-2fda248852f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/button.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/formInput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/account/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/register.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +43,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php-8.2.5\php.exe">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.2">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
@@ -48,6 +55,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2OYIS780k7F7Yq4huSBdcfspZTc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -68,7 +78,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -100,7 +110,9 @@
       <workItem from="1681751944085" duration="26571000" />
       <workItem from="1681785313434" duration="55000" />
       <workItem from="1681785379369" duration="87000" />
-      <workItem from="1681788802415" duration="36000" />
+      <workItem from="1681788802415" duration="708000" />
+      <workItem from="1681789516316" duration="38000" />
+      <workItem from="1681824734149" duration="2827000" />
     </task>
     <servers />
   </component>
