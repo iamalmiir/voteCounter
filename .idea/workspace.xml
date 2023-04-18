@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076e6ac0-2b6d-4db9-9d64-2fda248852f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/button.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/formInput.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/formHeader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/account/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/register.php" afterDir="false" />
@@ -112,7 +110,7 @@
       <workItem from="1681785379369" duration="87000" />
       <workItem from="1681788802415" duration="708000" />
       <workItem from="1681789516316" duration="38000" />
-      <workItem from="1681824734149" duration="2827000" />
+      <workItem from="1681824734149" duration="3702000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@ global $pdo;
 $page_title = "Create Account";
 require_once __DIR__ . "/../../config.php";
 require_once __DIR__ . "/../components/formInput.php";
+require_once __DIR__ . "/../components/formHeader.php";
 require_once __DIR__ . "/../components/button.php";
 
 // check if form is submitted
@@ -30,19 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <i class="fa-solid fa-user-plus flex mx-auto h-12 w-auto text-sky-950"></i>
-        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-sky-950">
-            Create an Account
-        </h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
-            Already have an account?
-            <a href="login.php" class="font-medium text-sky-600 hover:text-sky-500">
-                Log in
-            </a>
-        </p>
-    </div>
-
+    <?php
+    echo formHeader("Create an Account", "Already have an account?", "Log in", "login.php");
+    ?>
     <div class="mt-8 p-4 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white px-4 py-8 shadow-xl sm:rounded-lg sm:px-10">
             <form class="space-y-6" method="POST">

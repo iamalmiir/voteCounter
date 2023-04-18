@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../../config.php";
 require_once __DIR__ . "/../components/formInput.php";
+require_once __DIR__ . "/../components/formHeader.php";
 require_once __DIR__ . "/../components/button.php";
 global $pdo;
 global $page_title;
@@ -41,19 +42,9 @@ if (isset($error_message)) {
 ?>
 
 <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <i class="fa-solid fa-user flex mx-auto h-12 w-auto text-sky-950"></i>
-        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-sky-950">
-            Log in to your account
-        </h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
-            Don't have an account?
-            <a href="register.php" class="font-medium text-sky-600 hover:text-sky-500">
-                Create an account
-            </a>
-        </p>
-    </div>
-
+    <?php
+    echo formHeader("Log in to your account", "Don't have an account?", "Create an account", "register.php");
+    ?>
     <div class="mt-8 sm:mx-auto p-4 sm:w-full sm:max-w-md">
         <div class="bg-white px-4 py-8 shadow-xl sm:rounded-lg sm:px-10">
             <form class="space-y-6" method="POST">
@@ -66,4 +57,3 @@ if (isset($error_message)) {
         </div>
     </div>
 </div>
-
