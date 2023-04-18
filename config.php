@@ -6,15 +6,18 @@ if (isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/sr
     0) {
     header("Location: /voteCounter/src/vote.php");
     exit();
-} else if (isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/admin.php' && $_SESSION["isAdmin"] == 1) {
+} elseif (isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/admin.php' &&
+    $_SESSION["isAdmin"] == 1) {
     header("Location: /voteCounter/src/admin.php");
     exit();
-} else if (!isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/login.php' && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/register.php') {
+} elseif (!isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/login.php' &&
+    $_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/register.php') {
     header("Location: /voteCounter/src/account/login.php");
     exit();
 }
 
 require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . "/src/components/button.php";
 // Load .env variables
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -58,27 +61,9 @@ try {
             </div>
             <?php
             if (isset($_SESSION['username'])) {
-                echo '<div class="hidden sm:ml-6 sm:flex sm:items-center">
-                <div class="relative ml-3 cursor-pointer">
-                    <a href="/voteCounter/src/account/logout.php"
-                       class="flex rounded-md bg-sky-950 text-md text-white py-2 px-6 shadow-lg cursor-pointer hover:bg-sky-900
-                       focus:outline-none"
-                       id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                        Log out
-                    </a>
-                </div>
-            </div>';
-            } else if ($_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/login.php') {
-                echo '<div class="hidden sm:ml-6 sm:flex sm:items-center">
-                <div class="relative cursor-pointer ml-3">
-                    <a href="/voteCounter/src/account/login.php"
-                       class="flex rounded-md bg-sky-950 text-md text-white py-2 px-6 shadow-lg cursor-pointer hover:bg-sky-900
-                       focus:outline-none"
-                       id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                        Login
-                    </a>
-                </div>
-            </div>';
+                echo logInOutButton("Log out", "/voteCounter/src/account/logout.php");
+            } elseif ($_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/login.php') {
+                echo logInOutButton("Log in", "/voteCounter/src/account/login.php");
             }
             ?>
         </div>

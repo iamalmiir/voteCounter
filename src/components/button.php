@@ -14,3 +14,22 @@ function button($text, $type): string
     </div>
     ";
 }
+
+function logInOutButton($text, $href): string
+{
+    return "
+    <div class='hidden sm:ml-6 sm:flex sm:items-center'>
+      <div class='relative cursor-pointer ml-3'>
+        <a
+          href=$href
+          class='flex rounded-md bg-sky-950 text-md text-white py-2 px-6 shadow-lg
+          cursor-pointer hover:bg-sky-900 focus:outline-none'
+          id='user-menu-button'
+          aria-expanded='false'
+          aria-haspopup='true'
+        >
+          $text
+        </a>
+      </div>
+    </div>";
+}

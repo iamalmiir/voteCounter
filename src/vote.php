@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../config.php";
 require __DIR__ . "/components/table_field.php";
+require_once __DIR__ . "/components/button.php";
 global $pdo;
 global $page_title;
 $page_title = "Create Account";
@@ -10,13 +11,14 @@ if (isset($_SESSION['fullName'])) {
     $current_user = $_SESSION['fullName'];
 }
 
-//$table_field = table_field('Articulate requirements', 'articulateRequirementsDeveloping', 'articulateRequirementsAccomplished');
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get input values from form only if they are not empty
-    $articulateRequirements = $_POST['articulateRequirementsDeveloping'] ?? $_POST['articulateRequirementsAccomplished'];
-    $appropriateTools = $_POST['chooseAppropriateToolsDeveloping'] ?? $_POST['chooseAppropriateToolsAccomplished'];
-    $coherentOralPresentation = $_POST['giveClearAndCoherentOralPresentationDeveloping'] ?? $_POST['giveClearAndCoherentOralPresentationAccomplished'];
+    $articulateRequirements = $_POST['articulateRequirementsDeveloping'] ??
+        $_POST['articulateRequirementsAccomplished'];
+    $appropriateTools = $_POST['chooseAppropriateToolsDeveloping'] ??
+        $_POST['chooseAppropriateToolsAccomplished'];
+    $coherentOralPresentation = $_POST['giveClearAndCoherentOralPresentationDeveloping'] ??
+        $_POST['giveClearAndCoherentOralPresentationAccomplished'];
     $functionalRequirements = $_POST['functionedWellAsATeamDeveloping'] ?? $_POST['functionedWellAsATeamAccomplished'];
     $totalScore = $appropriateTools + $articulateRequirements + $coherentOralPresentation + $functionalRequirements;
 
@@ -28,7 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If user has not voted, insert new row into scores table
     if (!$result) {
-        $stmt = $pdo->prepare("INSERT INTO scores (user_id, articulate_requirements, appropriate_tools, coherent_oral_presentation, functioned_as_team, total_score) VALUES (:user_id, :articulate_requirements, :appropriate_tools, :coherent_oral_presentation, :functional_requirements, :total_score)");
+        $stmt = $pdo->prepare("INSERT INTO scores
+        (user_id, articulate_requirements, appropriate_tools, coherent_oral_presentation,
+         functioned_as_team, total_score)
+        VALUES
+        (:user_id, :articulate_requirements, :appropriate_tools, :coherent_oral_presentation,
+         :functional_requirements, :total_score)");
         $stmt->execute(array(
             'user_id' => $user_id,
             'articulate_requirements' => $articulateRequirements,
@@ -116,13 +123,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
             <div class="flex justify-end items-center mt-12">
-                <div class="sm:ml-16 sm:mt-0 sm:flex-none">
-                    <button type="submit"
-                            class="block rounded-md bg-sky-950 px-3 py-2 text-center text-sm font-bold text-white shadow-md
-                     hover:bg-sky-900">
-                        Submit
-                    </button>
-                </div>
+                <?php
+                echo button("Submit", "submit");
+                ?>
             </div>
         </form>
     </div>

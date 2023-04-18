@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <?php
     echo formHeader("Log in to your account", "Don't have an account?", "Create an account", "register.php");
