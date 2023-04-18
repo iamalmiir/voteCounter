@@ -31,13 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-
-
-}
-if (isset($error_message)) {
-    $message = $error_message;
-    $err = true;
-    require_once __DIR__ . "/../components/infoBanner.php";
+    if (isset($error_message)) {
+        $message = $error_message;
+        $err = true;
+        require_once __DIR__ . "/../components/infoBanner.php";
+    }
 }
 ?>
 
