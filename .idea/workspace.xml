@@ -26,7 +26,6 @@
       <change beforePath="$PROJECT_DIR$/src/components/table_field.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/table_field.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/results.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sql/queries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/queries.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/vote.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/voted.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/voted.php" afterDir="false" />
@@ -160,7 +159,7 @@
       <workItem from="1683314785848" duration="5689000" />
       <workItem from="1683347363609" duration="2936000" />
       <workItem from="1683402355848" duration="9176000" />
-      <workItem from="1683411820187" duration="1819000" />
+      <workItem from="1683411820187" duration="2052000" />
     </task>
     <servers />
   </component>
