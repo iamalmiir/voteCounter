@@ -13,7 +13,7 @@ $result = $sql->fetch(PDO::FETCH_ASSOC);
 
 // Check if form is submitted
 if ($result && !strpos((!strpos($_SERVER['REQUEST_URI'], "vote.php")), "voted.php")) {
-    header("Location: /voteCounter/src/voted.php");
+    header("Location: /voted.php");
     exit();
 }
 
