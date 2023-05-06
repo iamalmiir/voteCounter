@@ -67,9 +67,9 @@ if (isset($_SESSION['username']) && !$_SESSION['isAdmin'] && !strpos($_SERVER['R
             </div>
             <?php
             if (isset($_SESSION['username'])) {
-                echo logInOutButton("Log out", "/voteCounter/src/account/logout.php");
-            } elseif ($_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/login.php') {
-                echo logInOutButton("Log in", "/voteCounter/src/account/login.php");
+                echo logInOutButton("Log out", "/account/logout.php");
+            } elseif ($_SERVER['REQUEST_URI'] !== '/account/login.php') {
+                echo logInOutButton("Log in", "/account/login.php");
             }
             ?>
         </div>
