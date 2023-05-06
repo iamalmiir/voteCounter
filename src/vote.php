@@ -1,15 +1,25 @@
 <?php
-require_once __DIR__ . "/../config.php";
+global $pdo;
+$page_title = "Vote";
+require_once __DIR__ . "/config.php";
 require __DIR__ . "/components/table_field.php";
 require_once __DIR__ . "/components/button.php";
-global $pdo;
-global $page_title;
-$page_title = "Create Account";
+$current_user = $_SESSION['fullName'];
+// Check if user has already voted
+$sql = $pdo->prepare("SELECT * FROM scores WHERE user_id = :user_id");
+$user_id = $_SESSION['user_id'];
+$sql->execute(array('user_id' => $user_id));
+$result = $sql->fetch(PDO::FETCH_ASSOC);
 
-$current_user = "";
-if (isset($_SESSION['fullName'])) {
-    $current_user = $_SESSION['fullName'];
+// Check if form is submitted
+if ($result && !strpos((!strpos($_SERVER['REQUEST_URI'], "vote.php")), "voted.php")) {
+    header("Location: /voteCounter/src/voted.php");
+    exit();
 }
+
+// Get four users from database
+$sql = $pdo->query("SELECT * FROM users WHERE is_admin = false LIMIT 4");
+$users = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get input values from form only if they are not empty
@@ -20,38 +30,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $coherentOralPresentation = $_POST['giveClearAndCoherentOralPresentationDeveloping'] ??
         $_POST['giveClearAndCoherentOralPresentationAccomplished'];
     $functionalRequirements = $_POST['functionedWellAsATeamDeveloping'] ?? $_POST['functionedWellAsATeamAccomplished'];
+    $comments = $_POST['comments'] ?? "";
     $totalScore = $appropriateTools + $articulateRequirements + $coherentOralPresentation + $functionalRequirements;
 
-    // Check if user has already voted
-    $sql = $pdo->prepare("SELECT * FROM scores WHERE user_id = :user_id");
-    $user_id = $_SESSION['user_id'];
-    $sql->execute(array('user_id' => $user_id));
-    $result = $sql->fetch(PDO::FETCH_ASSOC);
-
     // If user has not voted, insert new row into scores table
-    if (!$result) {
-        $stmt = $pdo->prepare("INSERT INTO scores
+    $stmt = $pdo->prepare("INSERT INTO scores
         (user_id, articulate_requirements, appropriate_tools, coherent_oral_presentation,
-         functioned_as_team, total_score)
+         functioned_as_team, comments, total_score)
         VALUES
         (:user_id, :articulate_requirements, :appropriate_tools, :coherent_oral_presentation,
-         :functional_requirements, :total_score)");
-        $stmt->execute(array(
-            'user_id' => $user_id,
-            'articulate_requirements' => $articulateRequirements,
-            'appropriate_tools' => $appropriateTools,
-            'coherent_oral_presentation' => $coherentOralPresentation,
-            'functional_requirements' => $functionalRequirements,
-            'total_score' => $totalScore
-        ));
-        $success = true;
-        $message = "Your vote has been submitted.";
-    } else {
-        // If user has already voted, do nothing
-        $err = true;
-        $message = "You have already voted.";
-    }
-    require_once __DIR__ . "/components/infoBanner.php";
+         :functional_requirements, :comments, :total_score)");
+    $stmt->execute(array(
+        'user_id' => $user_id,
+        'articulate_requirements' => $articulateRequirements,
+        'appropriate_tools' => $appropriateTools,
+        'coherent_oral_presentation' => $coherentOralPresentation,
+        'functional_requirements' => $functionalRequirements,
+        'comments' => $comments,
+        'total_score' => $totalScore
+    ));
+    $success = true;
+    $message = "Your vote has been submitted.";
+    header("Location: /voteCounter/src/voted.php");
+    exit();
 }
 
 ?>
@@ -65,10 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="mt-8 sm:flex sm:items-center">
         <div class="flex justify-start sm:flex-auto">
             <h1 class="text-base mr-2 font-semibold leading-6 text-sky-950">Group Members: </h1>
-            <p class="text-base text-sky-950">Almir Redzematovic,&nbsp;</p>
-            <p class="text-base text-sky-950">John Doe,&nbsp;</p>
-            <p class="text-base text-sky-950">Jenny Doe,&nbsp;</p>
-            <p class="text-base text-sky-950">Mark Smith</p>
+            <?php
+            foreach ($users as $user) {
+                echo "<p class='text-base text-sky-950'>" . $user['full_name'] . ",&nbsp;</p>";
+            }
+            ?>
         </div>
     </div>
     <div class="mt-8 flow-root">
@@ -82,7 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 Criteria
                             </th>
                             <th scope="col" class="px-3 py-3.5 text-center text-md font-bold
-                        text-gray-900">Developing (0-10)
+                        text-gray-900">
+                                Developing (0-10)
                             </th>
                             <th scope="col" class="px-3 py-3.5 text-center text-md font-bold text-sky-950">
                                 Accomplished (10-15)
@@ -101,8 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             Comments:
                         </p>
                         <div class="w-1/2 mt-2">
-                            <label for="comment"></label>
-                            <textarea rows="4" name="comment" id="comment"
+                            <label for="comments"></label>
+                            <textarea rows="4" name="comments" id="comments"
                                       class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1
                                   ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset
                                   focus:ring-sky-600 sm:text-sm sm:leading-6"></textarea>

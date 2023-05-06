@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076e6ac0-2b6d-4db9-9d64-2fda248852f2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/722c0a64-253b-4676-9efb-f527121e8361.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/722c0a64-253b-4676-9efb-f527121e8361/storage_v2/_src_/database/votecounter.0scy8Q.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/722c0a64-253b-4676-9efb-f527121e8361/storage_v2/_src_/database/votecounter.0scy8Q/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/722c0a64-253b-4676-9efb-f527121e8361/storage_v2/_src_/database/votecounter.0scy8Q/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/722c0a64-253b-4676-9efb-f527121e8361/storage_v2/_src_/database/votecounter.0scy8Q/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/account/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/account/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/button.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/queries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/queries.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/vote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/voted.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/voted.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +55,15 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.2">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
     </include_path>
   </component>
   <component name="ProjectId" id="2OYIS780k7F7Yq4huSBdcfspZTc" />
@@ -74,7 +83,7 @@
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/iamalmiir/PhpstormProjects/voteCounter&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/voteCounter&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -92,10 +101,16 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\voteCounter\src" />
       <recent name="C:\Users\iamal\PhpstormProjects\voteCounter\src\account" />
       <recent name="C:\Users\iamal\PhpstormProjects\voteCounter\src" />
       <recent name="C:\Users\iamal\PhpstormProjects\voteCounter" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="login.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/src/account/login.php">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,7 +131,24 @@
       <workItem from="1681788802415" duration="708000" />
       <workItem from="1681789516316" duration="38000" />
       <workItem from="1681824734149" duration="5295000" />
-      <workItem from="1681830325757" duration="1719000" />
+      <workItem from="1681830325757" duration="1754000" />
+      <workItem from="1682028253223" duration="174000" />
+      <workItem from="1682028821142" duration="482000" />
+      <workItem from="1682029342470" duration="7000" />
+      <workItem from="1682029633419" duration="139000" />
+      <workItem from="1682029784059" duration="392000" />
+      <workItem from="1682030651376" duration="27000" />
+      <workItem from="1682030690598" duration="3206000" />
+      <workItem from="1682034094173" duration="998000" />
+      <workItem from="1682035310368" duration="2860000" />
+      <workItem from="1682052690152" duration="1434000" />
+      <workItem from="1682061064090" duration="370000" />
+      <workItem from="1682190956032" duration="681000" />
+      <workItem from="1682277313583" duration="14000" />
+      <workItem from="1683155023463" duration="6398000" />
+      <workItem from="1683314785848" duration="5689000" />
+      <workItem from="1683347363609" duration="2936000" />
+      <workItem from="1683402355848" duration="4412000" />
     </task>
     <servers />
   </component>

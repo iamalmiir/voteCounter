@@ -31,5 +31,19 @@ function logInOutButton($text, $href): string
           $text
         </a>
       </div>
-    </div>";
+    </div>
+    <div class='sm:hidden'>
+      <div class='relative cursor-pointer m-3'>
+        <a
+          href=$href
+          class='flex rounded-md bg-sky-950 text-md text-white py-2 px-6 shadow-lg
+          cursor-pointer hover:bg-sky-900 focus:outline-none'
+          id='user-menu-button'
+          aria-expanded='false'
+          aria-haspopup='true'
+        >
+          $text
+        </a>
+      </div>
+    ";
 }

@@ -1,23 +1,8 @@
 <?php
 // start session
 session_start();
-// If user is already logged in, redirect to appropriate page
-if (isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/vote.php' && $_SESSION["isAdmin"] ==
-    0) {
-    header("Location: /voteCounter/src/vote.php");
-    exit();
-} elseif (isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/admin.php' &&
-    $_SESSION["isAdmin"] == 1) {
-    header("Location: /voteCounter/src/admin.php");
-    exit();
-} elseif (!isset($_SESSION["username"]) && $_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/login.php' &&
-    $_SERVER['REQUEST_URI'] !== '/voteCounter/src/account/register.php') {
-    header("Location: /voteCounter/src/account/login.php");
-    exit();
-}
-
-require_once __DIR__ . "/vendor/autoload.php";
-require_once __DIR__ . "/src/components/button.php";
+require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/components/button.php";
 // Load .env variables
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -37,6 +22,25 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
+// Check if user has already voted
+$sql = $pdo->prepare("SELECT * FROM scores WHERE user_id = :user_id");
+$user_id = $_SESSION['user_id'];
+$sql->execute(array('user_id' => $user_id));
+$result = $sql->fetch(PDO::FETCH_ASSOC);
+
+if (isset($_SESSION['username']) && !$_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "vote.php") && !$result) {
+    header("Location: /voteCounter/src/vote.php");
+    exit();
+} elseif (isset($_SESSION['username']) && $_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "admin.php" && !$result)) {
+    header("Location: /voteCounter/src/admin.php");
+    exit();
+} elseif ((strpos($_SERVER['REQUEST_URI'], "admin.php") || strpos($_SERVER['REQUEST_URI'], "vote.php")) && !isset
+    ($_SESSION['username'])) {
+    header("Location: /voteCounter/src/account/login.php");
+    exit();
+}
+
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -48,15 +52,17 @@ try {
             integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <?php echo "<title>$page_title</title>"; ?>
+    <title>
+        <?php echo $page_title; ?>
+    </title>
 </head>
 <nav class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 justify-between">
             <div class="flex">
                 <div class="flex flex-shrink-0 items-center">
-                    <i class="fa-solid fa-check-to-slot text-sky-950 block h-8 w-auto lg:hidden"></i>
-                    <i class="fa-solid fa-check-to-slot text-sky-950 hidden h-8 w-auto lg:block"></i>
+                    <i class="fa-solid fa-gavel text-sky-950 block h-8 w-auto lg:hidden"></i>
+                    <i class="fa-solid fa-gavel text-sky-950 hidden h-8 w-auto lg:block"></i>
                 </div>
             </div>
             <?php

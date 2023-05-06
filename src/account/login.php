@@ -1,11 +1,12 @@
 <?php
-require_once __DIR__ . "/../../config.php";
+global $page_title;
+$page_title = "Login";
+global $pdo;
+require_once __DIR__ . "/../config.php";
 require_once __DIR__ . "/../components/formInput.php";
 require_once __DIR__ . "/../components/formHeader.php";
 require_once __DIR__ . "/../components/button.php";
-global $pdo;
-global $page_title;
-$page_title = "Login";
+
 // check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // get form data
@@ -15,22 +16,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if entered username and password match a user in the database
     try {
         $sql = $pdo->query("SELECT * FROM users WHERE username='$username' AND password='$password'");
-
+        $user = $sql->fetch(PDO::FETCH_ASSOC);
         // if a user is found, set session variables and redirect to home page
-        if ($sql->rowCount() > 0) {
-            $user = $sql->fetch(PDO::FETCH_ASSOC);
+        if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['fullName'] = $user['full_name'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['isAdmin'] = $user['is_admin'];
-            header("Location: /voteCounter/src/vote.php");
-            exit();
-        } else {
-            $error_message = "Invalid username or password.";
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
+
+    // if a user is found, redirect to voting page and exit
+    // if the user is admin then redirect to admin page
+    if ($user && $user['is_admin']) {
+        header("Location: /voteCounter/src/admin.php");
+        exit();
+    } elseif ($user) {
+        header("Location: /voteCounter/src/vote.php");
+        exit();
+    }
+
     if (isset($error_message)) {
         $message = $error_message;
         $err = true;

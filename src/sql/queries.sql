@@ -28,3 +28,6 @@ CREATE TABLE IF NOT EXISTS scores
 
 SELECT *
 FROM scores;
+
+SELECT *
+FROM users;
