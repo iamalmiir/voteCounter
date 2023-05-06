@@ -1,7 +1,7 @@
 <?php
 function formHeader($title, $subtitle, $option, $formIcon, $linkTo = ''): string
 {
-    $icon = $formIcon === 'login' ? 'fa-user' : 'fa-user-plus';
+    $icon = $formIcon === 'login' ? 'fa-arrow-right-to-bracket' : 'fa-user-plus';
 
     return "
     <div class='sm:mx-auto sm:w-full sm:max-w-md'>
