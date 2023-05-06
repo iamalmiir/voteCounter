@@ -16,8 +16,8 @@ function clearVotes()
     global $pdo;
     $sql = $pdo->prepare("DELETE FROM scores");
     $sql->execute();
-    header("Location: /results.php");
-    exit();
+    // refresh page without resubmitting form or redirecting
+    echo "<meta http-equiv='refresh' content='0'>";
 }
 
 // Check if the button is clicked
