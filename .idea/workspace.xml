@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076e6ac0-2b6d-4db9-9d64-2fda248852f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
@@ -13,8 +15,8 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/account/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/account/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/register.php" afterDir="false" />
@@ -24,7 +26,6 @@
       <change beforePath="$PROJECT_DIR$/src/components/formInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/formInput.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/infoBanner.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/infoBanner.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/table_field.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/table_field.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sql/queries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/queries.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/vote.php" afterDir="false" />
@@ -45,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -84,6 +86,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -156,7 +159,7 @@
       <workItem from="1683155023463" duration="6398000" />
       <workItem from="1683314785848" duration="5689000" />
       <workItem from="1683347363609" duration="2936000" />
-      <workItem from="1683402355848" duration="7052000" />
+      <workItem from="1683402355848" duration="7359000" />
     </task>
     <servers />
   </component>
