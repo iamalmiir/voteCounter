@@ -1,7 +1,7 @@
 <?php
 global $pdo;
 $page_title = "Vote";
-require_once __DIR__ . "/config.php";
+require_once __DIR__ . "/../config.php";
 require __DIR__ . "/components/table_field.php";
 require_once __DIR__ . "/components/button.php";
 $current_user = $_SESSION['fullName'];

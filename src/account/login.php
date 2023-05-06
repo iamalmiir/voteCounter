@@ -2,7 +2,7 @@
 global $page_title;
 $page_title = "Login";
 global $pdo;
-require_once __DIR__ . "/../config.php";
+require_once __DIR__ . "/../../config.php";
 require_once __DIR__ . "/../components/formInput.php";
 require_once __DIR__ . "/../components/formHeader.php";
 require_once __DIR__ . "/../components/button.php";

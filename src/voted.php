@@ -1,7 +1,7 @@
 <?php
 global $pdo;
 $page_title = "Vote Submitted";
-require_once __DIR__ . "/config.php";
+require_once __DIR__ . "/../config.php";
 ?>
 
 <div class="bg-white px-6 py-24 sm:py-32 lg:px-8">
