@@ -31,10 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // if a user is found, redirect to voting page and exit
     // if the user is admin then redirect to admin page
     if ($user && $user['is_admin']) {
-        header("Location: /voteCounter/src/admin.php");
+        header("Location: /admin.php");
         exit();
     } elseif ($user) {
-        header("Location: /voteCounter/src/vote.php");
+        header("Location: /vote.php");
         exit();
     }
 

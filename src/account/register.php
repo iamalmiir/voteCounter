@@ -7,7 +7,7 @@ require_once __DIR__ . "/../components/formHeader.php";
 require_once __DIR__ . "/../components/button.php";
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: /voteCounter/src/vote.php");
+    header("Location: /vote.php");
     exit();
 }
 
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = $pdo->query("INSERT INTO users (full_name, username, password, email)
     VALUES ('$fullName', '$username', '$password', '$email')");
     // redirect to login page
-    header("Location: /voteCounter/src/account/login.php");
+    header("Location: /account/login.php");
     exit();
 }
 ?>
