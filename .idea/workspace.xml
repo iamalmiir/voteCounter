@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076e6ac0-2b6d-4db9-9d64-2fda248852f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
@@ -16,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/account/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/logout.php" afterDir="false" />
@@ -111,8 +111,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\voteCounter" />
       <recent name="C:\xampp\htdocs\voteCounter\src" />
+      <recent name="C:\xampp\htdocs\voteCounter" />
       <recent name="C:\Users\iamal\PhpstormProjects\voteCounter\src\account" />
       <recent name="C:\Users\iamal\PhpstormProjects\voteCounter\src" />
       <recent name="C:\Users\iamal\PhpstormProjects\voteCounter" />
@@ -159,7 +159,7 @@
       <workItem from="1683155023463" duration="6398000" />
       <workItem from="1683314785848" duration="5689000" />
       <workItem from="1683347363609" duration="2936000" />
-      <workItem from="1683402355848" duration="7359000" />
+      <workItem from="1683402355848" duration="7463000" />
     </task>
     <servers />
   </component>
