@@ -16,7 +16,7 @@ $username = $_ENV['DB_USER'];
 $password = $_ENV['DB_PASSWORD'];
 
 try {
-    $conn_string = "pgsql:host=$host;port=$port;dbname=$dbname;user=$username;password=$password";
+    $conn_string = "pgsql:host=db-postgresql-nyc-do-user-9256353-0.b.db.ondigitalocean.com;port=25060;dbname=votecounter;user=votecounter;password=AVNS_sKADSf6amgsvcV7-zIf";
     $pdo = new PDO($conn_string);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
