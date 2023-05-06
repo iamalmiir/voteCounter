@@ -29,14 +29,14 @@ $sql->execute(array('user_id' => $user_id));
 $result = $sql->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_SESSION['username']) && !$_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "vote.php") && !$result) {
-    header("Location: /voteCounter/src/vote.php");
+    header("Location: /vote.php");
     exit();
 } elseif (isset($_SESSION['username']) && $_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "admin.php" && !$result)) {
-    header("Location: /voteCounter/src/admin.php");
+    header("Location: /admin.php");
     exit();
 } elseif ((strpos($_SERVER['REQUEST_URI'], "admin.php") || strpos($_SERVER['REQUEST_URI'], "vote.php")) && !isset
     ($_SESSION['username'])) {
-    header("Location: /voteCounter/src/account/login.php");
+    header("Location: /account/login.php");
     exit();
 }
 
