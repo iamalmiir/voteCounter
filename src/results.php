@@ -1,9 +1,8 @@
 <?php
-global $conn;
-global $page_title;
 global $pdo;
-$page_title = "Admin Page";
+$page_title = "Vote";
 require_once __DIR__ . "/../config.php";
+
 // Select all from scores table
 $sql = $pdo->query("SELECT * FROM scores");
 $scores = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -24,8 +23,6 @@ function clearVotes()
 if (isset($_POST['clear_votes'])) {
     clearVotes();
 }
-?>
-
 ?>
 <body>
 <div class="mt-12 px-4 sm:px-6 lg:px-8">
