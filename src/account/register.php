@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <?php
-    echo formHeader("Create an Account", "Already have an account?", "Log in", "login.php");
+    echo formHeader("Create an Account", "Already have an account?", "Log in", "register", "login.php");
     ?>
     <div class="mt-8 p-4 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white px-4 py-8 shadow-xl sm:rounded-lg sm:px-10">

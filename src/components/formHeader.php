@@ -1,9 +1,11 @@
 <?php
-function formHeader($title, $subtitle, $option, $linkTo = ''): string
+function formHeader($title, $subtitle, $option, $formIcon, $linkTo = ''): string
 {
+    $icon = $formIcon === 'login' ? 'fa-user' : 'fa-user-plus';
+
     return "
     <div class='sm:mx-auto sm:w-full sm:max-w-md'>
-      <i class='fa-solid fa-user flex mx-auto h-12 w-auto text-sky-950'></i>
+      <i class='fa-solid $icon flex mx-auto h-12 w-auto text-sky-950'></i>
       <h2
         class='mt-6 text-center text-3xl font-bold tracking-tight text-sky-950'
       >
