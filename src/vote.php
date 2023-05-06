@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ));
     $success = true;
     $message = "Your vote has been submitted.";
-    header("Location: /voteCounter/src/voted.php");
+    header("Location: /voted.php");
     exit();
 }
 

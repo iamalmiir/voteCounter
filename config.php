@@ -28,20 +28,20 @@ $user_id = $_SESSION['user_id'];
 $sql->execute(array('user_id' => $user_id));
 $result = $sql->fetch(PDO::FETCH_ASSOC);
 
-if (isset($_SESSION['username']) && !$_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "vote.php") && !$result) {
-    if (!strpos($_SERVER['REQUEST_URI'], "admin.php")) {
-        header("Location: /vote.php");
-        exit();
-    }
-} elseif (isset($_SESSION['username']) && $_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "admin.php") && !$result) {
-    if (!strpos($_SERVER['REQUEST_URI'], "vote.php")) {
-        header("Location: /admin.php");
-        exit();
-    }
-} elseif ((strpos($_SERVER['REQUEST_URI'], "admin.php") || strpos($_SERVER['REQUEST_URI'], "vote.php")) && !isset($_SESSION['username'])) {
-    header("Location: /account/login.php");
-    exit();
-}
+//if (isset($_SESSION['username']) && !$_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "vote.php") && !$result) {
+//    if (!strpos($_SERVER['REQUEST_URI'], "admin.php")) {
+//        header("Location: /vote.php");
+//        exit();
+//    }
+//} elseif (isset($_SESSION['username']) && $_SESSION['isAdmin'] && !strpos($_SERVER['REQUEST_URI'], "admin.php") && !$result) {
+//    if (!strpos($_SERVER['REQUEST_URI'], "vote.php")) {
+//        header("Location: /admin.php");
+//        exit();
+//    }
+//} elseif ((strpos($_SERVER['REQUEST_URI'], "admin.php") || strpos($_SERVER['REQUEST_URI'], "vote.php")) && !isset($_SESSION['username'])) {
+//    header("Location: /account/login.php");
+//    exit();
+//}
 
 
 ?>
